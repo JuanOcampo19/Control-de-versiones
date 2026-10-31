@@ -1,0 +1,23 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class InversionVector {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] vector = new int[6]; // Vector de 6 elementos
+        
+        for (int i = 0; i < vector.length; i++) {
+            System.out.print("Ingrese el elemento " + (i + 1) + ": ");
+            vector[i] = sc.nextInt();
+        }
+        
+        // Inversión sin vector auxiliar permanente
+        for (int i = 0; i < vector.length / 2; i++) {
+            int temp = vector[i];
+            vector[i] = vector[vector.length - 1 - i];
+            vector[vector.length - 1 - i] = temp;
+        }
+        
+        System.out.println("Resultado de la inversión: " + Arrays.toString(vector));
+    }
+}

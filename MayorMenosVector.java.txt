@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class MayorMenorVector {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double[] numeros = new double[8]; // Almacena 8 números decimales
+        
+        for (int i = 0; i < numeros.length; i++) {
+            System.out.print("Ingrese el número decimal para el índice " + i + ": ");
+            numeros[i] = sc.nextDouble();
+        }
+        
+        double mayor = numeros[0], menor = numeros[0];
+        int indiceMayor = 0, indiceMenor = 0;
+        
+        for (int i = 1; i < numeros.length; i++) {
+            if (numeros[i] > mayor) {
+                mayor = numeros[i];
+                indiceMayor = i;
+            }
+            if (numeros[i] < menor) {
+                menor = numeros[i];
+                indiceMenor = i;
+            }
+        }
+        
+        System.out.println("El número mayor es " + mayor + " en el índice " + indiceMayor);
+        System.out.println("El número menor es " + menor + " en el índice " + indiceMenor);
+    }
+}

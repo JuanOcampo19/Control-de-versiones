@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class VectoresParalelos {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String[] estudiantes = new String[5]; // Vector para nombres
+        double[] notas = new double[5];       // Vector paralelo para calificaciones
+        double sumaNotas = 0;
+        
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Nombre del estudiante " + (i + 1) + ": ");
+            estudiantes[i] = sc.next();
+            System.out.print("Calificación final de " + estudiantes[i] + ": ");
+            notas[i] = sc.nextDouble();
+            sumaNotas += notas[i];
+        }
+        
+        double promedioGeneral = sumaNotas / 5.0;
+        System.out.println("\nPromedio general del grupo: " + promedioGeneral);
+        System.out.println("Alumnos con calificación mayor o igual al promedio:");
+        
+        for (int i = 0; i < 5; i++) {
+            if (notas[i] >= promedioGeneral) {
+                System.out.println("- " + estudiantes[i] + " (" + notas[i] + ")");
+            }
+        }
+    }
+}

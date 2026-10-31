@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class SumaPromedioVector {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] numeros = new int[10]; // Capacidad para 10 elementos
+        int suma = 0;
+        
+        for (int i = 0; i < numeros.length; i++) {
+            System.out.print("Ingrese el valor " + (i + 1) + " por teclado: ");
+            numeros[i] = sc.nextInt();
+            suma += numeros[i];
+        }
+        
+        System.out.println("Suma total de los elementos: " + suma);
+        System.out.println("Promedio de los elementos: " + (suma / 10.0));
+    }
+}
